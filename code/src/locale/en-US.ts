@@ -2,11 +2,15 @@ import localeMessageBox from '@/components/message-box/locale/en-US';
 import localeLogin from '@/views/login/locale/en-US';
 
 import localeWorkplace from '@/views/dashboard/workplace/locale/en-US';
-
+import localeVideoCards from '@/views/dashboard/videocards/locale/en-US';
+import localeBasic from '@/views/details/basic/locale/en-US';
+import localeGraph from '@/views/details/graph/locale/en-US';
+import localeComments from '@/views/details/comments/locale/en-US';
 import localeSettings from './en-US/settings';
 
 export default {
   'menu.dashboard': 'Dashboard',
+  'menu.details': 'Details',
   'menu.server.dashboard': 'Dashboard-Server',
   'menu.server.workplace': 'Workplace-Server',
   'menu.server.monitor': 'Monitor-Server',
@@ -26,4 +30,8 @@ export default {
   ...localeMessageBox,
   ...localeLogin,
   ...localeWorkplace,
+  ...localeVideoCards,
+  ...localeBasic,
+  ...localeGraph,
+  ...localeComments,
 };

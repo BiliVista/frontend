@@ -29,10 +29,13 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ## 页面设计
 
 - 主页: 基本信息排列组合曲线图 + 好评率/评论数/点赞量/投币/转发排行榜
+- 管理视频信息页
+
+
 - 视频基本页:  视频基本信息 +好评率+ 点赞比
 - 视频详情页:  视频弹幕词云图 + (三连+转发饼图)
 - 评论好评分析详情页: 评论饼图+表格+好评
-- 管理视频信息页
+
 
 
 ![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404262323829.png)

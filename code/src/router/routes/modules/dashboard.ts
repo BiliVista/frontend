@@ -22,6 +22,16 @@ const DASHBOARD: AppRouteRecordRaw = {
         roles: ['*'],
       },
     },
+    {
+      path: 'videocards',
+      name: 'VideoCards',
+      component: () => import('@/views/dashboard/videocards/index.vue'),
+      meta: {
+        locale: 'menu.dashboard.videocards',
+        requiresAuth: true,
+        roles: ['*'],
+      },
+    },
   ],
 };
 
