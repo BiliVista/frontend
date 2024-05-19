@@ -49,7 +49,7 @@
         </a-avatar>
         <a-statistic :title="$t('workplace.newFromYesterday')" :value="mostScore" :precision="1" :value-from="0"
           animation>
-          <template #suffix> % <icon-caret-up class="up-icon" /> </template>
+          <template #suffix> % <icon-caret-up class="up-icon" v-if="mostScore>90"/> </template>
         </a-statistic>
       </a-space>
     </a-grid-item>
@@ -62,10 +62,10 @@
 <script lang="js" setup>
 // import {ref} from 'vue';
 
-  const mostPlay = 375.5;
+  const mostPlay = 1375.5;
   const tolVideo = 26;
-  const tolComment = 28874;
-  const mostScore = 89.8;
+  const tolComment = 68874;
+  const mostScore = 96.8;
 
 </script>
 
