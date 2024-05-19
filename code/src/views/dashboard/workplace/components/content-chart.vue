@@ -112,7 +112,7 @@ const { chartOption } = useChartOption(() => {
         return `<div>
             <p class="tooltip-title">${firstElement.axisValueLabel}</p>
             <div class="content-panel"><span>Rate</span><span class="tooltip-value">${(
-            Number(firstElement.value) * 10000
+            Number(firstElement.value) 
           ).toLocaleString()}</span></div>
           </div>`;
       },
@@ -173,7 +173,6 @@ const fetchData = async () => {
   setLoading(true);
   try {
     const { data: chartData } = await queryContentData();
-    console.log(chartData);
     chartData.forEach((el: ContentDataRecord, idx: number) => {
       xAxis.value.push(el.x);
       chartsData.value.push(el.y);

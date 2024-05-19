@@ -31,7 +31,7 @@
           :scroll="{ x: '100%', y: '264px' }"
         >
           <template #columns>
-            <a-table-column title="Rank" data-index="key" :width="80"></a-table-column>
+            <a-table-column title="ID" data-index="key" :width="80"></a-table-column>
             <a-table-column title="Title" data-index="title">
               <template #cell="{ record }">
                 <a-typography-paragraph

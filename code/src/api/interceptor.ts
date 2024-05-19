@@ -44,7 +44,8 @@ axios.interceptors.response.use(
       Message.error({
         content: res.msg || 'Error',
         duration: 5 * 1000,
-      });
+      }
+    );
       // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
       if (
         [50008, 50012, 50014].includes(res.code) &&

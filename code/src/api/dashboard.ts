@@ -7,15 +7,26 @@ export interface ContentDataRecord {
 }
 
 export function queryContentData() {
-  return axios.get<ContentDataRecord[]>('/api/content-data');
+  return axios.get<ContentDataRecord[]>('http://127.0.0.1:8000/api/videos/rate/compare/');
 }
 
 export interface PopularRecord {
-  key: number;
+  key: string;
   rate: number;
   title: string;
 }
 
 export function queryPopularList(params: { type: string }) {
-  return axios.get<TableData[]>('/api/popular/list', { params });
+  return axios.get<TableData[]>('http://127.0.0.1:8000/api/videos/popular/list', { params });
+}
+
+
+export interface Data3Lian {
+  like: number;
+  favorite: number;
+  coin:number
+}
+
+export function query3Lian() {
+  return axios.get<Data3Lian>('http://127.0.0.1:8000/api/videos/count/3lian/');
 }
