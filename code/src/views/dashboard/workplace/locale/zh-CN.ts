@@ -32,6 +32,6 @@ export default {
   'workplace.popularContent.text': '文本',
   'workplace.popularContent.image': '图片',
   'workplace.popularContent.video': '视频',
-  'workplace.categoriesPercent': '内容类型占比',
+  'workplace.categoriesPercent': '三连占比',
   'workplace.pecs': '次',
 };
