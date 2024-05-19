@@ -17,14 +17,11 @@
           type="button"
           @change="typeChange as any"
         >
-          <a-radio value="text">
-            {{ $t('workplace.popularContent.text') }}
+          <a-radio value="likeRate">
+            {{ $t('workplace.popularContent.likeRate') }}
           </a-radio>
-          <a-radio value="image">
-            {{ $t('workplace.popularContent.image') }}
-          </a-radio>
-          <a-radio value="video">
-            {{ $t('workplace.popularContent.video') }}
+          <a-radio value="commentRate">
+            {{ $t('workplace.popularContent.commentRate') }}
           </a-radio>
         </a-radio-group>
         <a-table
@@ -34,8 +31,8 @@
           :scroll="{ x: '100%', y: '264px' }"
         >
           <template #columns>
-            <a-table-column title="排名" data-index="key"></a-table-column>
-            <a-table-column title="内容标题" data-index="title">
+            <a-table-column title="Rank" data-index="key" :width="80"></a-table-column>
+            <a-table-column title="Title" data-index="title">
               <template #cell="{ record }">
                 <a-typography-paragraph
                   :ellipsis="{
@@ -46,24 +43,7 @@
                 </a-typography-paragraph>
               </template>
             </a-table-column>
-            <a-table-column title="点击量" data-index="clickNumber">
-            </a-table-column>
-            <a-table-column
-              title="日涨幅"
-              data-index="increases"
-              :sortable="{
-                sortDirections: ['ascend', 'descend'],
-              }"
-            >
-              <template #cell="{ record }">
-                <div class="increases-cell">
-                  <span>{{ record.increases }}%</span>
-                  <icon-caret-up
-                    v-if="record.increases !== 0"
-                    style="color: #f53f3f; font-size: 8px"
-                  />
-                </div>
-              </template>
+            <a-table-column title="Rate(%)" data-index="rate" :width="120">
             </a-table-column>
           </template>
         </a-table>
@@ -78,7 +58,7 @@
   import { queryPopularList } from '@/api/dashboard';
   import type { TableData } from '@arco-design/web-vue/es/table/interface';
 
-  const type = ref('text');
+  const type = ref('likeRate');
   const { loading, setLoading } = useLoading();
   const renderList = ref<TableData[]>();
   const fetchData = async (contentType: string) => {
@@ -95,7 +75,7 @@
   const typeChange = (contentType: string) => {
     fetchData(contentType);
   };
-  fetchData('text');
+  fetchData(type.value);
 </script>
 
 <style scoped lang="less">

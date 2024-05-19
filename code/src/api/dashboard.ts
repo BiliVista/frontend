@@ -2,7 +2,7 @@ import axios from 'axios';
 import type { TableData } from '@arco-design/web-vue/es/table/interface';
 
 export interface ContentDataRecord {
-  x: string;
+  x: number;
   y: number;
 }
 
@@ -12,9 +12,8 @@ export function queryContentData() {
 
 export interface PopularRecord {
   key: number;
-  clickNumber: string;
+  rate: number;
   title: string;
-  increases: number;
 }
 
 export function queryPopularList(params: { type: string }) {
