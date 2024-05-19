@@ -33,3 +33,6 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - 视频详情页:  视频弹幕词云图 + (三连+转发饼图)
 - 评论好评分析详情页: 评论饼图+表格+好评
 - 管理视频信息页
+
+
+![](https://cdn.jsdelivr.net/gh/open17/Pic/img/202404262323829.png)

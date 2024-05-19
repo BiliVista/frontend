@@ -1,21 +1,19 @@
-<script setup>
-import SearchPage from './components/SearchPage.vue';
-import TopBar from './components/TopBar.vue';
-
-import {ref} from 'vue';
-
-let backgroundImg=ref('https://cdn.jsdelivr.net/gh/open17/Pic/img/202403011536167.jpeg')
-
-
-</script>
-
 <template>
-  <div class="flex w-screen h-screen flex-col bg-cover pt-20" :style="{'background-image':`url(${backgroundImg})`}">
-    <TopBar/>
-    <SearchPage/>
+  <div class="w-screen h-screen overflow-x-hidden">
+    <el-container>
+      <el-header>
+        <TopBar/>
+      </el-header>
+      <el-container>
+        <el-aside width="200px"><LeftNav/></el-aside>
+        <el-main>Main</el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
-<style scoped>
 
-</style>
+<script setup>
+import TopBar from './components/TopBar.vue';
+import LeftNav from './components/LeftNav.vue';
+</script>
