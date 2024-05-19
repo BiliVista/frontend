@@ -1,6 +1,6 @@
 export default {
   'menu.dashboard.workplace': 'Workplace',
-  'workplace.welcome': 'Welcome!',
+  'workplace.welcome': 'Welcome~',
   'workplace.balance': 'Balance (CNY)',
   'workplace.order.pending': 'Pending',
   'workplace.order.pendingRenewal': 'Renewal Order',
