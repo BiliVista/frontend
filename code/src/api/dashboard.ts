@@ -45,3 +45,15 @@ export interface videoInfo {
 export function queryVideoInfo() {
   return axios.get<videoInfo[]>('http://127.0.0.1:8000/api/videos/infos/');
 }
+
+
+export interface BasicCount {
+  'view':string,
+  'video':string,
+  'comment':string,
+  'sentiment':string
+}
+
+export function queryBasicCount() {
+  return axios.get<BasicCount>('http://127.0.0.1:8000/api/videos/count/basic/');
+}

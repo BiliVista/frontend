@@ -6,8 +6,8 @@
           <img alt="avatar"
             src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/288b89194e657603ff40db39e8072640.svg~tplv-49unhts6dw-image.image" />
         </a-avatar>
-        <a-statistic :title="$t('workplace.onlineContent')" :value="mostPlay" :precision="1" :value-from="0" animation
-          show-group-separator>
+        <a-statistic :title="$t('workplace.onlineContent')" :value="renderList.view" :precision="1" :value-from="0"
+          animation show-group-separator>
           <template #suffix>
             W+ <span class="unit">{{ $t('workplace.pecs') }}</span>
           </template>
@@ -20,7 +20,8 @@
           <img alt="avatar"
             src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/fdc66b07224cdf18843c6076c2587eb5.svg~tplv-49unhts6dw-image.image" />
         </a-avatar>
-        <a-statistic :title="$t('workplace.putIn')" :value="tolVideo" :value-from="0" animation show-group-separator>
+        <a-statistic :title="$t('workplace.putIn')" :value="renderList.video" :value-from="0" animation
+          show-group-separator>
           <template #suffix>
             <span class="unit">{{ $t('workplace.pecs') }}</span>
           </template>
@@ -33,7 +34,8 @@
           <img alt="avatar"
             src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/77d74c9a245adeae1ec7fb5d4539738d.svg~tplv-49unhts6dw-image.image" />
         </a-avatar>
-        <a-statistic :title="$t('workplace.newDay')" :value="tolComment" :value-from="0" animation show-group-separator>
+        <a-statistic :title="$t('workplace.newDay')" :value="renderList.comment" :value-from="0" animation
+          show-group-separator>
           <template #suffix>
             <span class="unit">{{ $t('workplace.pecs') }}</span>
           </template>
@@ -47,9 +49,9 @@
           <img alt="avatar"
             src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/c8b36e26d2b9bb5dbf9b74dd6d7345af.svg~tplv-49unhts6dw-image.image" />
         </a-avatar>
-        <a-statistic :title="$t('workplace.newFromYesterday')" :value="mostScore" :precision="1" :value-from="0"
-          animation>
-          <template #suffix> % <icon-caret-up class="up-icon" v-if="mostScore>90"/> </template>
+        <a-statistic :title="$t('workplace.newFromYesterday')" :value="renderList.sentiment" :precision="1"
+          :value-from="0" animation>
+          <template #suffix> % <icon-caret-up class="up-icon" v-if="renderList.sentiment > 90" /> </template>
         </a-statistic>
       </a-space>
     </a-grid-item>
@@ -59,18 +61,34 @@
   </a-grid>
 </template>
 
-<script lang="js" setup>
-// import {ref} from 'vue';
+<script lang="ts" setup>
+import { ref } from 'vue';
+import useLoading from '@/hooks/loading';
+import { queryBasicCount, BasicCount } from '@/api/dashboard';
 
-  const mostPlay = 1375.5;
-  const tolVideo = 26;
-  const tolComment = 68874;
-  const mostScore = 96.8;
+const { loading, setLoading } = useLoading();
+const renderList = ref <BasicCount> ({'view':0,'video':0,'comment':0,'sentiment':0});
+const fetchData = async () => {
+  try {
+    setLoading(true);
+    const { data } = await queryBasicCount();
+    renderList.value = data;
+  } catch (err) {
+    console.err(err);
+  } finally {
+    setLoading(false);
+  }
+};
+fetchData();
+
+// const mostPlay = 1375.5;
+// const tolVideo = 26;
+// const tolComment = 68874;
+// const mostScore = 96.8;
 
 </script>
 
 <style lang="less" scoped>
-
 .arco-grid.panel {
   margin-bottom: 0;
   padding: 16px 20px 0 20px;
@@ -99,5 +117,4 @@
 :deep(.panel-border) {
   margin: 4px 0 0 0;
 }
-
 </style>
