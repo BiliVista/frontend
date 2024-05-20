@@ -24,9 +24,24 @@ export function queryPopularList(params: { type: string }) {
 export interface Data3Lian {
   like: number;
   favorite: number;
-  coin:number
+  coin: number
 }
 
 export function query3Lian() {
   return axios.get<Data3Lian>('http://127.0.0.1:8000/api/videos/count/3lian/');
+}
+
+
+export interface videoInfo {
+  rate: number;
+  bvid: string;
+  author: string;
+  title: string;
+  like: number;
+  share: number;
+  img:string;
+}
+
+export function queryVideoInfo() {
+  return axios.get<videoInfo[]>('http://127.0.0.1:8000/api/videos/infos/');
 }
