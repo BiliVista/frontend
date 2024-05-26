@@ -65,10 +65,10 @@ export default {
   'workplace.allProject': 'All Projects',
   'workplace.loadMore': 'Load More',
   'workplace.viewMore': 'View More',
-  'workplace.contentData': 'Demand Ratio/Approval Rate',
+  'workplace.contentData': 'Like-Play Rate/Good-reviews Rate',
   'workplace.popularContent': 'Data Leaderboard',
-  'workplace.popularContent.likeRate': 'Demand Ratio',
-  'workplace.popularContent.commentRate': 'Approval Rate',
+  'workplace.popularContent.likeRate': 'Like-Play Rate',
+  'workplace.popularContent.commentRate': 'Good-reviews Rate',
   'workplace.categoriesPercent': 'Triple Combo Percentage',
   'workplace.pecs': 'Times',
 };
