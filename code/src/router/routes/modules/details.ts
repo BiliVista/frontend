@@ -12,26 +12,26 @@ const DETAILS: AppRouteRecordRaw = {
     order: 1,
   },
   children: [
-    {
-      path: 'basic',
-      name: 'Basic',
-      component: () => import('@/views/details/basic/index.vue'),
-      meta: {
-        locale: 'menu.details.basic',
-        requiresAuth: true,
-        roles: ['*'],
-      },
-    },
-    {
-      path: 'graph',
-      name: 'Graph',
-      component: () => import('@/views/details/graph/index.vue'),
-      meta: {
-        locale: 'menu.details.graph',
-        requiresAuth: true,
-        roles: ['*'],
-      },
-    },
+    // {
+    //   path: 'basic',
+    //   name: 'Basic',
+    //   component: () => import('@/views/details/basic/index.vue'),
+    //   meta: {
+    //     locale: 'menu.details.basic',
+    //     requiresAuth: true,
+    //     roles: ['*'],
+    //   },
+    // },
+    // {
+    //   path: 'graph',
+    //   name: 'Graph',
+    //   component: () => import('@/views/details/graph/index.vue'),
+    //   meta: {
+    //     locale: 'menu.details.graph',
+    //     requiresAuth: true,
+    //     roles: ['*'],
+    //   },
+    // },
     {
       path: 'comments',
       name: 'Comments',
